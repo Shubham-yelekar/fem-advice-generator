@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+:root {
+    --ff-family:'Manrope', sans-serif;
+
+    --light-cyan: hsl(193, 38%, 86%);
+    --neong-green: hsl(150, 100%, 66%);
+
+    /* Neutral */
+
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+html {
+    font-size: 62.5%;
+    font-family: var(--ff-family);
+}
+
+img,
+  picture {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  body {
+      background-color: var(--dark-blue);
+      color: aliceblue;
+
+      display: grid;
+      place-items: center;
+      height: 100vh;
+    }
+
+.container {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    background-color: var(--dark-grayish-blue);
+
+    max-width: 60vw;
+    padding: 4rem;
+    border-radius: 14px;
+}
+
+p {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    color: var(--neong-green);
+}
+
+.quote-box {
+    max-width: 420px;
+}
+
+.quote {
+    text-align: center;
+    color: var(--light-cyan);
+    
+}
+
+.random-button {
+    position: absolute;
+    bottom: -18px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 36px;
+    background-color: var(--neong-green);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.random-button:hover {
+    box-shadow: var(--neong-green) 0px 0px 24px;
+   
+}
+
+.random-button:hover .random-icon {
+    animation: rotate 1s infinite linear;
+}
+
+.divider {
+    margin: 2rem 0;
+}
+
